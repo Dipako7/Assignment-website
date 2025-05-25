@@ -1,0 +1,230 @@
+<!DOCTYPE html> ==$0
+<html lang="en" style="--vh: 7.38px;"><head>
+    <meta charset="UTF-8">
+    
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>★M'Café - Coffee &amp; Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+    <a href="index.html">
+        <h1>★M'Café</h1>
+        <p class="tagline">Coffee &amp; Bakery</p>
+    </a>
+</div>
+      
+
+     <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to ★M'Café</h2>
+            <p>Where every cup tells a story and every bite brings joy.</p>
+            <a href="menu.html" class="btn">Explore Our Menu</a>
+    
+<div class="video-container">
+  <video class="responsive-video" controls="">
+    <source src="videos/myvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+    </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-coffee"></i>
+            <h3>Premium Coffee</h3>
+            <p>Ethically sourced, freshly roasted beans for the perfect cup every time.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-bread-slice"></i>
+            <h3>Fresh Bakery</h3>
+            <p>Handcrafted pastries and breads baked daily in our kitchen.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Community Space</h3>
+            <p>A warm, welcoming environment for friends, family, and colleagues.</p>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Our Specialties</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/specialty-coffee.jpg" alt="Specialty Coffee">
+                <h3>Signature Blend</h3>
+                <p>Our award-winning house blend with notes of chocolate and caramel.</p>
+            </div>
+            <div class="product">
+                <img src="images/croissant.jpg" alt="Butter Croissant">
+                <h3>Butter Croissants</h3>
+                <p>Flaky, buttery perfection made using traditional French techniques.</p>
+            </div>
+            <div class="product">
+                <img src="images/cake.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Decadence</h3>
+                <p>Rich, moist chocolate cake with layers of ganache and coffee buttercream.</p>
+            </div>
+        </div>
+        <div class="center-button">
+            <a href="menu.html" class="btn">View Full Menu</a>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Join Us for Coffee Hour</h2>
+            <p>Enjoy 20% off all coffee drinks and pastries every weekday from 3-5pm!</p>
+            <a href="menu.html" class="btn btn-light">Learn More</a>
+        </div>
+    </section>
+
+    <section class="testimonial-preview">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"★M'Café has the best cappuccino in town, and their almond croissants are to die for!"</p>
+            <div class="testimonial-author">
+                <img src="images/customer1.jpg" alt="Sarah M.">
+                <p>Sarah M.</p>
+            </div>
+        </div>
+        <div class="center-button">
+            <a href="testimonials.html" class="btn">Read More Testimonials</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>★M'Café</h3>
+                <p>Where coffee meets comfort.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 7am - 8pm</p>
+                <p>Saturday - Sunday: 8am - 9pm</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Coffee Street</p>
+                <p>Gaborone, Botswana</p>
+                <p>Phone: (267) 123-4567</p>
+                <p>Email: hello@mcafe.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 ★M'Café. All rights reserved.</p>
+        </div>
+    </footer>
+  
+    //JavaScript
+    
+ <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+  
+ 
+  mobileMenuToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('show');
+  });
+  
+
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnToggle = mobileMenuToggle.contains(event.target);
+    
+    if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+    }
+  });
+  
+  const menuTabs = document.querySelectorAll('.menu-tab');
+  if (menuTabs.length > 0) {
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+      
+        menuTabs.forEach(t => t.classList.remove('active'));
+        
+
+        this.classList.add('active');
+        
+        document.querySelectorAll('.menu-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        
+    
+        const tabId = this.getAttribute('data-tab');
+        const targetMenu = document.getElementById(tabId + '-menu');
+        if (targetMenu) {
+          targetMenu.classList.add('active');
+        }
+      });
+    });
+  }
+  
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+       
+        filterBtns.forEach(b => b.classList.remove('active'));
+        
+        this.classList.add('active');
+       
+        const filter = this.getAttribute('data-filter');
+     
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  
+
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    img.onerror = function() {
+      this.src = 'images/placeholder.jpg';
+      this.alt = 'Image not available';
+    };
+  });
+ 
+  function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  
+  setVH();
+  window.addEventListener('resize', setVH);
+});
+      
+    </script>
+
+
+
+</body></html>
